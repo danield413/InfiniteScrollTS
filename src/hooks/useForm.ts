@@ -11,7 +11,11 @@ const useForm = ( initialValue: { search: '' } = { search: ''} ) => {
         })
     }
 
-    return { values, handleChange }
+    const reset = () => {
+        setValues({ search: ''})
+    }
+
+    return { values, handleChange, reset }
 
 }
 

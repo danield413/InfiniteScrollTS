@@ -7,21 +7,27 @@ const Form = (): JSX.Element => {
 
     const { dispatch } = useGifs();
 
-    const { values, handleChange } = useForm({
+    const { values, handleChange, reset } = useForm({
         search: ''
     });
     const { search } = values;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if(search.length === 0) return;
+
         dispatch({
             type: 'LOAD'
-        })
-        const res = await getGifs(0, search)
+        });
+        const res = await getGifs(0, search);
         dispatch({
             type: 'ADD',
-            payload: res && res.data.data
-        })
+            payload: {
+                data: res.data.data,
+                query: search
+            }
+        });
+        reset();
     }
 
     return (
@@ -33,6 +39,7 @@ const Form = (): JSX.Element => {
                 onChange={handleChange} 
                 value={values.search}
                 autoComplete="off"
+                placeholder="Escribe algo aquí..."
             />
             <button type="submit" className="submit">Buscar</button>
         </form>

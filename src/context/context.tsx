@@ -6,14 +6,15 @@ import reducer from './reducer';
 const initialValue = {
     gifs: [],
     offset: 0,
-    loading: false
+    loading: false,
+    query: ''
 }
 
 type Init = {
     state: any
     dispatch: any
 }
-
+//Partial<ContextProps>
 const GifsContext = React.createContext<Init>({ state: {}, dispatch : () => {}});
 
 export const useGifs = () => {

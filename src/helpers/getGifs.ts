@@ -11,7 +11,7 @@ const getGifs = async ( offset: number = 0, query: string = '') => {
                     'api_key' : process.env.REACT_APP_API_KEY,
                     'q': query,
                     'offset': offset,
-                    'limit': 20
+                    'limit': 10
                 }
             })
             return resp
