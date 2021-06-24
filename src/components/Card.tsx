@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 type CardTypes = {
     lastElementRef: null | any
     title: string
@@ -8,6 +9,7 @@ type CardTypes = {
 }
 
 const Card = ({lastElementRef, title, url}: CardTypes) : JSX.Element => {
+
     return (
         <>
         { lastElementRef && <div ref={lastElementRef} className="card">

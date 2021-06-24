@@ -17,6 +17,9 @@ const Form = (): JSX.Element => {
         if(search.length === 0) return;
 
         dispatch({
+            type: 'RESET-QUERY'
+        })
+        dispatch({
             type: 'LOAD'
         });
         const res = await getGifs(0, search);

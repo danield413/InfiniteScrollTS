@@ -14,7 +14,6 @@ type State = {
 const reducer = (state: State, action: Action) => {
     switch (action.type) {
         case 'ADD':
-            console.log(action.payload.data)
             return {
                 ...state,
                 gifs: state.gifs.concat(action.payload.data),
@@ -30,6 +29,11 @@ const reducer = (state: State, action: Action) => {
             return {
                 ...state,
                 offset: state.offset + 10
+            }
+        case 'RESET-QUERY':
+            return {
+                ...state,
+                gifs: []
             }
         default:
             return state;

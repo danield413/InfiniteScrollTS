@@ -5,34 +5,39 @@
   min-height: calc(100vh - 160px);
 }
 .form {
-  background-color: rgb(141, 141, 141);
+  background-color: rgb(61, 61, 61);
   height: 60px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
+  z-index: 100;
 }
 .input {
   height: 36px;
   width: 20rem;
   border: none;
   outline: none;
-  padding: 0 5px;
-  border: 2px solid transparent;
-  transition: .3s all;
+  padding: 0 10px;
+  border: 2px solid #00FF8B;
+  background-color: #2b2b2b;
+  transition: .3s ease-in;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  color: white;
+}
+.input::placeholder {
+  color: white;
 }
 .input:focus {
-  border: 2px solid rgb(0, 104, 223);
+  border: 2px solid white;
 }
 .submit {
   height: 40px;
   width: 6rem;
   border: none;
-  background-color: rgb(0, 104, 223);
-  color: white;
+  background-color: #00FF8B;
   font-weight: bold;
   cursor: pointer;
   transition: .3s all;
@@ -41,7 +46,7 @@
 }
 
 .submit:hover {
-  background-color: rgb(0, 83, 179);
+  background-color: white;
 }
 
 .list-gifs {
@@ -64,7 +69,17 @@
   border-radius: 5px;
 }
 
-#text {
+.text {
   font-weight: bold;
   text-align: center;
+}
+
+.title {
+  background-image: linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  font-weight: normal;
 }

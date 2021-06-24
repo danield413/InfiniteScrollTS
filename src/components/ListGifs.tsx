@@ -22,7 +22,6 @@ const ListGifs = () : JSX.Element => {
     const observer = useRef<null | IntersectionObserver>()
     // La función se memoriza y está activa hasta que cambia el ref es decir, el ultimo elemento. Cuando este cambia la función se actualiza y vuelve a hacer un observer de ese último elemento y así sucesivamente
     const lastElementRef = useCallback( node => {
-        console.log(node)
         if (loading) return;
         if (observer.current) observer.current.disconnect();
 
@@ -43,7 +42,7 @@ const ListGifs = () : JSX.Element => {
                     }
                 });
         }
-        }, { rootMargin: '-200px' })
+        }, { rootMargin: '0px' })
         if (node) observer.current.observe(node)
 
         return () => observer.current.disconnect();
@@ -89,7 +88,7 @@ const ListGifs = () : JSX.Element => {
     
 
     return (
-        <div className="list-gifs">
+        <div className="list-gifs  animate__animated animate__fadeIn">
             {gifs && gifs.map( ({images, title} : Image, index: number) => {
                 if( gifs.length === index + 1 ) {
                     return  <Card key={index} lastElementRef={lastElementRef} title={title} url={images.downsized.url} />
@@ -98,7 +97,7 @@ const ListGifs = () : JSX.Element => {
                 }
             })}
             { loading && <Spinner />}
-            {(!loading && gifs.length === 0) && <p id="text">Busca gifs, scroll infinito :D</p>}
+            {(!loading && gifs.length === 0) && <> <h1 className="text title">Buscador de Gifs</h1> <h2 className="text">Con scroll infinito</h2> <p className="text sub">por Daniel Díaz</p></>}
         </div>
     )
 }
