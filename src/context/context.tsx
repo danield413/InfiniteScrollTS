@@ -10,12 +10,12 @@ const initialValue = {
     query: ''
 }
 
-type Init = {
-    state: any
-    dispatch: any
+type State = {
+    state: any,
+    dispatch: React.Dispatch<any>
 }
 //Partial<ContextProps>
-const GifsContext = React.createContext<Init>({ state: {}, dispatch : () => {}});
+const GifsContext = React.createContext<State>({ state: {}, dispatch : () => {}});
 
 export const useGifs = () => {
     return useContext(GifsContext);

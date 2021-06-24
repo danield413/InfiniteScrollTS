@@ -1,9 +1,4 @@
 
-type Action = {
-    type: string
-    payload: any
-}
-
 type State = {
     gifs: Array<any>,
     offset: number,
@@ -11,7 +6,14 @@ type State = {
     loading: boolean
 }
 
-const reducer = (state: State, action: Action) => {
+type ActionType =
+    | { type: 'ADD', payload:  any }
+    | { type: 'LOAD' }
+    | { type: 'CHANGE-OFFSET' }
+    | { type: 'RESET-QUERY' }
+
+
+const reducer = (state: State, action: ActionType) => {
     switch (action.type) {
         case 'ADD':
             return {

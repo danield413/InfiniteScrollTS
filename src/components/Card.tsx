@@ -17,7 +17,7 @@ const Card = ({lastElementRef, title, url}: CardTypes) : JSX.Element => {
                 <div className="img">
                     <img src={url} alt={title} />
                 </div>
-                <p>{title}</p>
+                <p className="img-title">{title}</p>
                 </div>
             </div>}
         { !lastElementRef && <div className="card">
@@ -25,7 +25,7 @@ const Card = ({lastElementRef, title, url}: CardTypes) : JSX.Element => {
                 <div className="img">
                     <img src={url} alt={title} />
                     </div>
-                    <p>{title}</p>
+                    <p className="img-title">{title}</p>
                 </div>
             </div>}
         </>

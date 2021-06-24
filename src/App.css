@@ -83,3 +83,36 @@
 .sub {
   font-weight: normal;
 }
+
+@media screen and (max-width: 500px){
+  .layout {
+    padding: 80px 20px;
+  }
+  .input {
+    width: 60vw;
+  }
+  .submit {
+    width: 20vw;
+  }
+  .card .img {
+    width: 300px;
+  }
+  .card img {
+    width: 300px;
+  }
+  .img-title {
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card .img {
+    width: 250px;
+  }
+  .card img {
+    width: 250px;
+  }
+  .input, .submit {
+    font-size: .8rem;
+  }
+}
